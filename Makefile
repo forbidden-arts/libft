@@ -6,20 +6,30 @@
 #    By: dpalmer <dpalmer@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/26 11:53:47 by dpalmer           #+#    #+#              #
-#    Updated: 2023/01/31 13:34:21 by dpalmer          ###   ########.fr        #
+#    Updated: 2023/05/04 13:47:48 by dpalmer          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-# Variables
+# Output Name
+NAME		= $(TARGET_DIR)libft.a
 
-NAME		= libft.a
-INCLUDE		= include/
+# Directories
+INC_DIR		= include/
 SRC_DIR		= src/
 OBJ_DIR		= obj/
+TARGET_DIR 	= ./
+
+# Compiler
 CC			= cc
+
+# Flags
 CFLAGS		= -Wall -Werror -Wextra -I
 AR			= ar rcs
+OPT			=
 
+# Suffixing
+SRC 		= 	$(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
+OBJ 		= 	$(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
 
 # Text Decoration
 
@@ -30,8 +40,7 @@ BLUE = \033[0;94m
 B_MAGENTA = \033[1;35m
 CYAN = \033[0;96m
 
-
-# Sources
+# Source Files
 
 SRC_FILES =	ft_atoi_base		\
 			ft_atoi				\
@@ -83,13 +92,13 @@ SRC_FILES =	ft_atoi_base		\
 			ft_pf_printers		\
 			ft_printf			\
 			ft_min				\
-			ft_max
+			ft_max				\
+			ft_abs				\
+			ft_isspace			\
+			ft_strspn			\
+			ft_strtok
 
-
-SRC 		= 	$(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
-OBJ 		= 	$(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
-
-###
+# Rules
 
 all:		$(NAME)
 
@@ -102,7 +111,7 @@ $(NAME):	$(OBJ)
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 			@mkdir -p $(OBJ_DIR)
 			@echo "$(GREEN)Compiling: $(YELLOW)$<$(C_RESET)"
-			@$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
+			@$(CC) $(CFLAGS) $(INC_DIR) -c $< -o $@
 
 clean:
 			@rm -rf $(OBJ_DIR)

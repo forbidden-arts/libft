@@ -6,7 +6,7 @@
 /*   By: dpalmer <dpalmer@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 15:02:34 by dpalmer           #+#    #+#             */
-/*   Updated: 2023/01/31 13:42:45 by dpalmer          ###   ########.fr       */
+/*   Updated: 2023/05/04 13:49:18 by dpalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <unistd.h>
 # include "get_next_line.h"
 # include "ft_printf.h"
+# include "bool.h"
 
 # define ULONG_MAX (unsigned long)
 
@@ -80,5 +81,10 @@ t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
 char			*ft_strrev(const char *s);
 int				ft_min(int count, ...);
 int				ft_max(int count, ...);
+unsigned int	ft_abs(int n);
+BOOL			ft_isspace(char c);
+size_t			ft_strspn(const char *str, const char *charset);
+size_t			ft_strcspn(const char *str, const char *charset);
+
 
 #endif
