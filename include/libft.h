@@ -6,7 +6,7 @@
 /*   By: dpalmer <dpalmer@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 15:02:34 by dpalmer           #+#    #+#             */
-/*   Updated: 2023/05/08 10:59:41 by dpalmer          ###   ########.fr       */
+/*   Updated: 2023/05/08 11:07:37 by dpalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,5 +85,6 @@ unsigned int	ft_abs(int n);
 BOOL			ft_isspace(char c);
 size_t			ft_strspn(const char *str, const char *charset);
 size_t			ft_strcspn(const char *str, const char *charset);
+char			*ft_strtok(char *restrict str, const char *restrict delim);
 
 #endif

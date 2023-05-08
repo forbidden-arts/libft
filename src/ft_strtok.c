@@ -6,12 +6,14 @@
 /*   By: dpalmer <dpalmer@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 13:53:47 by dpalmer           #+#    #+#             */
-/*   Updated: 2023/05/04 13:53:59 by dpalmer          ###   ########.fr       */
+/*   Updated: 2023/05/08 11:12:24 by dpalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/* Be aware that strtok modifies the original string. Best practice is to
+* create a copy of the string before passing to strtok. */
 char	*ft_strtok(char *restrict str, const char *restrict delim)
 {
 	static char	*head;
