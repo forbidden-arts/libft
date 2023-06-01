@@ -1,5 +1,5 @@
 # libft
-![dpalmer's 42 stats](https://badge42.vercel.app/api/v2/cli5pb141011308mh1fmi5qrq/stats?cursusId=21&coalitionId=271)
+![dpalmer's 42 stats](https://badge42.vercel.app/api/v2/cli5pb141011308mh1fmi5qrq/stats?cursusId=21&coalitionId=271)  
 ![Achievement Unlocked!](./assets/libftm.png)  
 ![dpalmer's 42 Libft Score](https://badge42.vercel.app/api/v2/cli5pb141011308mh1fmi5qrq/project/2848837)
 ## 🪧 Overview
