@@ -6,7 +6,7 @@
 /*   By: dpalmer <dpalmer@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 10:22:48 by dpalmer           #+#    #+#             */
-/*   Updated: 2023/01/30 17:35:15 by dpalmer          ###   ########.fr       */
+/*   Updated: 2023/07/11 13:10:07 by dpalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 the performance of FdF. In the interest of efficiency, ft_strlen is no longer
 called, which may result in the over-allocation of memory. Calloc is now used
 in place of the previous malloc. In the event a malicious actor tries to access
-any indexes beyond the NULL-terminator in the original string, the new 
+any indexes beyond the NULL-terminator in the original string, the new
 substring will also produce a series of NULL-terminators.	*/
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
@@ -27,7 +27,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	j;
 	char	*sub;
 
-	if (!s || len < 0)
+	if (!s || len == 0)
 		return (NULL);
 	sub = calloc(sizeof(char), (len + 1));
 	if (!sub)
@@ -37,7 +37,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	while (s[i])
 	{
 		if (i >= start && j < len)
-		{	
+		{
 			sub[j] = s[i];
 			j++;
 		}
