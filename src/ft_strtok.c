@@ -6,7 +6,7 @@
 /*   By: dpalmer <dpalmer@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 13:53:47 by dpalmer           #+#    #+#             */
-/*   Updated: 2023/05/08 11:13:09 by dpalmer          ###   ########.fr       */
+/*   Updated: 2023/07/31 12:34:48 by dpalmer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,12 @@ char	*ft_strtok(char *restrict str, const char *restrict delim)
 
 	if (str)
 		head = str;
-	result = head + ft_strspn(head, delim);
-	head = result + ft_strcspn(head, delim);
-	if (*head)
-	{
-		*head = '\0';
-		head++;
-	}
-	if (*result)
-		return (result);
-	else
+	head += ft_strspn(head, delim);
+	if (head == NULL || *head == '\0')
 		return (NULL);
+	result = head;
+	head += ft_strcspn(head, delim);
+	if (*head)
+		*head++ = '\0';
+	return (result);
 }
